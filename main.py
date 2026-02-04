@@ -28,7 +28,7 @@ if "user_id" not in st.session_state:
     st.session_state["user_id"] = st.query_params["user_id"]
 
 #Firestoreのデータへのアクセス
-ref = db.collection("users3_4").document(st.session_state["user_id"]).collection("conversation").order_by("timestamp")
+ref = db.collection("users3_2").document(st.session_state["user_id"]).collection("conversation").order_by("timestamp")
 
 # セッションステートの初期化
 if "input" not in st.session_state:
@@ -82,7 +82,7 @@ def show_messages():
 
 
 #firestoreへの保存のためのアクセス
-add_ref = db.collection("users3_4").document(st.session_state["user_id"]).collection("conversation")
+add_ref = db.collection("users3_2").document(st.session_state["user_id"]).collection("conversation")
 #送信ボタンが押されたとき
 def send_message():
     if st.session_state["human_message"] != "":
