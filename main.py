@@ -133,6 +133,7 @@ def finish():
 if st.session_state["time"] != None and datetime.datetime.now(datetime.timezone.utc) - st.session_state["time"] > datetime.timedelta(minutes=5):
     if st.session_state["dialog_finish"] == 0:
         finish()
+        st.stop()
 
 #メッセージが空の時か、最初が人間のメッセージの時、最初のAIのメッセージを挿入する。
 if st.session_state["messages"] == [] or st.session_state["messages"][0]["role"] == "human":
