@@ -111,7 +111,7 @@ def generate_response():
     st.session_state["messages"].append(output_message_data)
 
 #5分経った時のダイアログ
-@st.dialog("5分経過しました。")
+@st.dialog("5分経過しました。", dismissible=False)
 def finish():
     st.title("会話を続けますか？")
     st.write("このまま続けることもできますし、いつでも下の終了ボタンから会話を終了できます。")
